@@ -1,23 +1,16 @@
-server:
-  port: 8082
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/dsa
-    username: admin
-    password: Sriban@123
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        show_sql: true
-        format_sql: false
-  batch:
-    jdbc:
-      initialize-schema: EMBEDDED
-    job:
-      enabled: false
+  application:
+    name: batch-service
+  config:
+    import: 'optional:configserver:${config-server}'
+    name: batch-service
+  profiles:
+    active: dev
 
-
-
+  kafka:
+    template:
+      default-topic: client_info
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
