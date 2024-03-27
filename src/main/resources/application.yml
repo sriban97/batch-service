@@ -7,10 +7,10 @@ spring:
   profiles:
     active: dev
 
-  kafka:
-    template:
-      default-topic: client_info
-    producer:
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#  kafka:
+#    template:
+#      default-topic: client_info
+#    producer:
+#      bootstrap-servers: 192.168.1.7:9092
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

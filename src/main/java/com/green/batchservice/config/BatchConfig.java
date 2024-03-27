@@ -62,7 +62,7 @@ public class BatchConfig {
 
         FlatFileItemReader<Client> flatFileItemReader = new FlatFileItemReader<>();
         flatFileItemReader.setName("Client Reader");
-        flatFileItemReader.setResource(new FileSystemResource("/home/sriban/Workspace/WSJava/green-deployment/batch-service/src/main/resources/client.csv"));
+        flatFileItemReader.setResource(new FileSystemResource("/opt/workspace/doc/kafka-data.ods"));
 
         flatFileItemReader.setLinesToSkip(1);
         flatFileItemReader.setLineMapper(lineMapper);
